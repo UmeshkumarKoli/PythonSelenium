@@ -20,6 +20,14 @@ def setup(request):
     for item in session.items:
         cls = item.getparent(pytest.Class)
         setattr(cls.obj,"driver",driver)
-    
+        
     yield 
-    driver.close() 
+    driver.close()     
+
+@pytest.fixture(scope="class")
+def resource_1_teardown(request):
+     
+    yield
+    driver=request.cls.driver
+    driver.get("https://www.github.com/")
+    print('\nTeardown for resource 1 called')
