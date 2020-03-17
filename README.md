@@ -1,4 +1,4 @@
-# PythonSelenium
+# Python Selenium
 Usage of @pytest.fixture(scope="session")
 @pytest.fixture(scope="class")
 @pytest.mark.usefixtures("setup")
